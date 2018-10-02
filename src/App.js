@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 
 import Travel from "./Travel";
+import Travels from "./Travels";
 
 class App extends Component {
   render() {
@@ -12,18 +13,14 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">My travels</h1>
         </header>
+        {Travels.map(travel => 
         <Travel
-          destination="Mallorca"
-          country ="Spain"
-          photo ="https://okrentacar.es/img/oficinas/mallorca-back.jpg"
-          distance = "575 km"
+          destination = {travel.destination}
+          country = {travel.country}
+          photo = {travel.photo}
+          distance = {travel.distance}
         />
-        <Travel
-          destination="Johannesburg"
-          country ="South Africa"
-          photo ="https://trendscatchers.io/wp-content/uploads/2018/03/Johannesburg-Skyline-1600x900-1024x576.jpg"
-          distance = "12.000 km"
-        />
+        )}
       </div>
     );
   }
